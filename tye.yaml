@@ -1,0 +1,22 @@
+# tye application configuration file
+# read all about it at https://github.com/dotnet/tye
+#
+# when you've given us a try, we'd love to know what you think:
+#    https://aka.ms/AA7q20u
+#
+name: tye-sample
+ingress:
+  - name: ingress
+    bindings:
+      - port: 8081
+    rules:
+      - path: /api/weatherforecast
+        service: api1
+      - path: /api/weatherforecast2
+        service: api2
+
+services:
+- name: api1
+  project: api1/api1.csproj
+- name: api2
+  project: api2/api2.csproj
